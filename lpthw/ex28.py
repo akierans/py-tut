@@ -1,0 +1,1 @@
+Theory on practicing logic pg 102
