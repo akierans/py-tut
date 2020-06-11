@@ -162,7 +162,7 @@ class TheBridge(Scene):
 			arm and don't want to set it off.
 			"""))
 		
-		action - input("> ")
+		action = input("> ")
 
 		if action == "throw the bomb":
 			print(dedent("""
@@ -206,10 +206,11 @@ class EscapePod(Scene):
 			"""))
 
 		good_pod = randint(1,5)
+		print(f"Psssst! Try pod #{good_pod}")
 		guess = input("[pod #]> ")
 
 		if int(guess) != good_pod:
-			print(dedent("""
+			print(dedent(f"""
 				You jump into pod {guess} and hit the eject buttton.
 				The pod escapes out into the void of space, then 
 				omplodes as the hill ruptures crushing your body into
@@ -217,7 +218,7 @@ class EscapePod(Scene):
 				"""))
 			return 'death'
 		else:
-			print(dedent("""
+			print(dedent(f"""
 				You jump into pod {guess} and hit the eject button.
 				THe pod easily slides out into space heading to the
 				planet below.  As it flies to the planet, you look
