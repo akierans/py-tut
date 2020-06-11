@@ -123,8 +123,12 @@ class LasweWeaponArmory(Scene):
 
 		while guess != code and guesses < 10:
 			print("BZZZZZED!")
+			print(f"You have {9- guesses} attempts remaining.")
 			guesses += 1
 			guess = input("[KEPYAPD]> ")
+
+			if guesses == 5:
+				print(f"Maybe you should try {code}")
 
 		if guess == code:
 			print("BEEEEEEEP!")
@@ -134,6 +138,7 @@ class LasweWeaponArmory(Scene):
 				you can to the bridge where you must place it in the
 				right spot.
 				"""))
+
 			return 'the_bridge'
 
 		else:
