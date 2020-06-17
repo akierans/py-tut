@@ -2,8 +2,6 @@ directions = {'north', 'south', 'east', 'west', 'up', 'down', 'left', 'right', '
 verbs = {'go', 'stop', 'kill', 'eat'}
 stop_words = {'the', 'in', 'from', 'of', 'at', 'it'}
 nouns = {'door', 'bear', 'princess', 'cabinet'}
-#numbers = {}
-
 
 def scan(words):
 	
