@@ -9,16 +9,17 @@ def scan(words):
 	sentence = []
 
 	for i in words:
-		if i.lower() in directions:
+		low_i = i.lower()
+		if low_i in directions:
 			sentence.append(('direction', i))
 
-		elif i.lower() in verbs:
+		elif low_i in verbs:
 			sentence.append(('verb', i))
 
-		elif i.lower() in stop_words:
+		elif low_i in stop_words:
 			sentence.append(('stop', i))
 
-		elif i.lower() in nouns:
+		elif low_i in nouns:
 			sentence.append(('noun', i))
 		
 		elif i.isdigit():
