@@ -45,3 +45,4 @@ def test_errors():
 	assert_equal(result, [('noun', 'bear'),
 							('error', 'IAS'),
 							('noun', 'princess')])
+	assert_raises(Exception, lexicon.scan("qwerty"))
