@@ -30,3 +30,15 @@ def test_pobj():
 	assert_equal(parser.parse_object(lexicon.scan("North bear")), ('direction', 'North'))
 	assert_equal(parser.parse_object(lexicon.scan("north the princess")), ('direction', 'north'))
 	assert_raises(Exception, parser.parse_object, lexicon.scan("go in the north"))
+
+def test_subj():
+	assert_equal(parser.parse_subject(lexicon.scan("door in the forest")), ('noun', 'door'))
+	assert_equal(parser.parse_subject(lexicon.scan("Door in the forest")), ('noun', 'Door'))
+	assert_equal(parser.parse_subject(lexicon.scan("in the cabinet")), ('noun', 'cabinet'))
+	assert_equal(parser.parse_subject(lexicon.scan("in the kill cabinet")), ('noun', 'player'))
+	assert_equal(parser.parse_subject(lexicon.scan("kill the forest")), ('noun', 'player'))
+	assert_equal(parser.parse_subject(lexicon.scan("in the cabinet kill bear")), ('noun', 'cabinet'))
+	assert_raises(Exception, parser.parse_subject, lexicon.scan("From the north"))
+
+def parse_sentence():
+	return
