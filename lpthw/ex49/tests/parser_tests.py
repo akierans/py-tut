@@ -40,5 +40,14 @@ def test_subj():
 	assert_equal(parser.parse_subject(lexicon.scan("in the cabinet kill bear")), ('noun', 'cabinet'))
 	assert_raises(Exception, parser.parse_subject, lexicon.scan("From the north"))
 
-def parse_sentence():
-	return
+def test_parse_sentence():
+	
+	def check(sent, subject, verb, object):
+		assert_equal(sent.subject, subject)
+		assert_equal(sent.verb, verb)
+		assert_equal(sent.object, object)
+	sent = parser.parse_sentence(lexicon.scan("Princess kill the bear"))
+
+	check(sent, "Princess", "kill", "bear")
+
+	assert_raises(Exception, parser.parse_sentence, (lexicon.scan('moo')))
