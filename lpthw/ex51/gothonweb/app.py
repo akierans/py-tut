@@ -6,15 +6,19 @@ app = Flask(__name__)
 
 @app.route('/hello', methods=['POST', 'GET'])
 def index():
-	#name = request.args.get('name', 'Nobody')
-	#greet = request.args.get('greet','Hello')
-	greeting = "Hello World"
-
+	name = request.args.get('name', 'Nobody')
+	greet = request.args.get('greet','Hello')
+	
 	if request.method == "POST":
 		name = request.form['name']
 		greet = request.form['greet']
 		greeting = f"{greet}, {name}"
 		return render_template("index.html", greeting=greeting)
+
+	# elif name and greet:
+	# 	greeting = f"{greet}, {name}"
+	# 	return render_template("index.html", greeting=greeting)
+
 	else:
 		return render_template("hello_form.html")
 
