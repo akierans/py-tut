@@ -97,8 +97,9 @@ the_bridge.add_paths({
 	'throw the bomb': generic_death,
 	'slowly place the bomb': escape_pod
 	})
+
 laser_weapon_armory.add_paths({
-	'0132': the_bridge.
+	'0132': the_bridge,
 	'*': generic_death
 	})
 
