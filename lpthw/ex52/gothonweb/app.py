@@ -7,7 +7,8 @@ app = Flask(__name__)
 @app.route("/")
 def index():
 	#This is used to "setup" the session with starting values
-	session['room_name'] = planisphere.startingreturn redirect(url_for("game"))
+	session['room_name'] = planisphere.start
+	return redirect(url_for("game"))
 
 @app.route("/game", methods=['GET', 'POST'])
 def game():
